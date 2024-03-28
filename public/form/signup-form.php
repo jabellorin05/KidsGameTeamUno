@@ -23,7 +23,7 @@
 <body>
 
 <!--Form-->
-<form id="form1" method="POST" action="class3a_response.php" >
+<form id="form1" method="POST" action="../assets/js/checkForm-ajax" >
   <!--Form fields to input data-->
  
  
@@ -56,11 +56,18 @@
   <input id="register" type="submit" name="register" value="Register" />
   <input id="login" type="submit" name="login" value="Login" />
 
-            function disableButton() {
-            document.getElementById('submitButton').disabled = true;
-        }
+            
+        
 
 </form>
+<script>
+    // Obtener el botón por su ID
+  //  var button = document.getElementById("register");
+
+    // Habilitar el botón eliminando el atributo disabled
+   // button.removeAttribute("disabled");
+</script>
+
 </body>
 <?php
 
