@@ -19,7 +19,8 @@
 <script src="../assets/js/uname-ajax.js"></script>
 <script src="../assets/js/password-ajax.js"></script>
 <script src="../assets/js/cPassword-ajax.js"></script>
-
+<script src="../assets/js/uname-Exist.js"></script>
+<body>
 
 <!--Form-->
 <form id="form1" method="POST" action="class3a_response.php" >
@@ -27,7 +28,7 @@
  
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()" required><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserNameExist()" required><br>  
   <span id="uNameMessage"></span>  <br>    
 
  
@@ -54,12 +55,18 @@
   <!--Submit button to send form data-->
   <input id="register" type="submit" name="register" value="Register" />
   <input id="login" type="submit" name="login" value="Login" />
-</form>
 
+            function disableButton() {
+            document.getElementById('submitButton').disabled = true;
+        }
+
+</form>
+</body>
 <?php
 
 //connection with the db  variable  to have the connectoin ($connection)
 require_once '../../db/conection.php';
+require_once '../../src/features/checkUsername.php';
 
 
 ?>
