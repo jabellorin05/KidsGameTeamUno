@@ -1,25 +1,25 @@
-function ValidateLname(){
+function ValidateUserName(){
    
 
-    var lName = document.getElementById("lName").value || "";
-  
+    var uName = document.getElementById("uName").value || "";
+   
     // Crea una nueva instancia de XMLHttpRequest
     var xmlhttp = new XMLHttpRequest();
 
     // Configura la solicitud POST
-    xmlhttp.open("POST", "../../src/features/lname_validation.php", true);
+    xmlhttp.open("POST", "../../src/features/uname_validation.php", true);
 
     // Establece el encabezado de la solicitud
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Envía los datos al servidor
-    xmlhttp.send("lName=" + lName);
+    xmlhttp.send("uName=" + uName);
 
     // Maneja la respuesta del servidor
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText != null){
-                document.getElementById("lNameMessage").innerHTML = this.responseText;
+                document.getElementById("uNameMessage").innerHTML = this.responseText;
                
 
             }
