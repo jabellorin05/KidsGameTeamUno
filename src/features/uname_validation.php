@@ -2,7 +2,7 @@
 <?php
 
 $warn_msg = "";
-$start_Letter_msg = "Must start with Capital letter .";
+$start_Letter_msg = "The username must start with Capital letter .";
 $max_lenght = "Username must contain at least 8 characters";
 $empty_msg ="The username is empty";
 global $validUsername;

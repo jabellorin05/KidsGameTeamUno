@@ -38,7 +38,7 @@
 
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()" required value="<?php $uName= $_POST["uName"];  if(isset($uName)) echo $uName  ?>"><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()" required value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
   <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
@@ -50,14 +50,14 @@
   <span id="cPasswordMessage"></span>  
  
   <label for="inputName">First Name</label>
-  <input id="fName" type="text" name="fname" placeholder="John" onkeyup="ValidateFname()" required value="<?php  $fName = $_POST["fname"]; if(isset($fName)) echo $fName  ?>"><br>  
+  <input id="fName" type="text" name="fname" placeholder="John" onkeyup="ValidateFname()" required value="<?php if(isset($_POST["register"])) $fName = $_POST["fname"]; if(isset($fName)) echo $fName  ?>"><br>  
   <span id="fNameMessage"></span>  
   <br>  
   <label for="inputlname">Last Name|Nom</label>
-  <input id="lName" type="text" name="lname" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php  $lName = $_POST["lname"];  if(isset($lName)) echo $lName  ?>"><br> 
+  <input id="lName" type="text" name="lname" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lname"];  if(isset($lName)) echo $lName  ?>"><br> 
   <span id="lNameMessage"></span><br>
   <label for="email">E-mail</label>
-  <input id="email" type="text" name="email" placeholder="JohnDoe@gmail.com" required onkeyup="ValidateEmail()" value="<?php  $email = $_POST["email"];  if(isset($email)) echo $email  ?>"><br>
+  <input id="email" type="text" name="email" placeholder="JohnDoe@gmail.com" required onkeyup="ValidateEmail()" value="<?php if(isset($_POST["register"])) $email = $_POST["email"];  if(isset($email)) echo $email  ?>"><br>
   <span id="emailMessage"></span><br>
   
   

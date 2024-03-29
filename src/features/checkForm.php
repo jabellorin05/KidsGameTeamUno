@@ -7,10 +7,26 @@ if (isset($_POST["register"])) {
 if (isset($_POST["uName"])) {
   
     require_once '../../src/features/checkUsername.php';
-    echo "<br>";
+    if($validEUsername==false)
+     echo "<br>";
     require_once '../../src/features/uname_validation.php';
+    if($validUsername==false)
     echo "<br>";
-    if(!$validEUsername==false && !$validUsername==false){
+    require_once '../../src/features/fname_validation.php';
+    if($validName==false)
+    echo "<br>";
+    require_once '../../src/features/lname_validation.php';
+    if($validlName==false)
+    echo "<br>";
+    require_once '../../src/features/password_validation.php';
+
+    if($password==false)
+    echo "<br>";
+    require_once '../../src/features/email_validation.php';
+    if($validEmail==false)
+    echo "<br>";
+
+    if(!$validEUsername==false && !$validUsername==false && !$validName==false && !$validlName==false && !$password==false  && !$validEmail==false) {
         header("Location: prueba.php");
        
     }
