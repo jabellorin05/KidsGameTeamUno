@@ -7,12 +7,12 @@ if (isset($_POST["register"])) {
 if (isset($_POST["uName"])) {
   
     require_once '../../src/features/checkUsername.php';
+    echo "<br>";
     require_once '../../src/features/uname_validation.php';
-    if($validEUsername==false){
-        echo "erro with the username verify";
-       
-    }else{
+    echo "<br>";
+    if(!$validEUsername==false && !$validUsername==false){
         header("Location: prueba.php");
+       
     }
 
 }
