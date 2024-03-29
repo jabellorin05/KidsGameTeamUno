@@ -1,6 +1,8 @@
+
+
 function ValidateUserName(){
    
-
+   
     var uName = document.getElementById("uName").value || "";
    
     // Crea una nueva instancia de XMLHttpRequest
@@ -19,7 +21,7 @@ function ValidateUserName(){
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText != null){
-                document.getElementById("uNameMessage").innerHTML = this.responseText;
+                document.getElementById("uNameMessage2").innerHTML = this.responseText;
                
 
             }

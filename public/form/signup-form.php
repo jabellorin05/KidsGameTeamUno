@@ -20,16 +20,17 @@
 <script src="../assets/js/password-ajax.js"></script>
 <script src="../assets/js/cPassword-ajax.js"></script>
 <script src="../assets/js/uname-Exist.js"></script>
+<script src="../assets/js/checkForm-ajax.js"></script>
 <body>
 
 <!--Form-->
-<form id="form1" method="POST" action="../assets/js/checkForm-ajax" >
+<form id="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
   <!--Form fields to input data-->
  
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserNameExist()" required><br>  
-  <span id="uNameMessage"></span>  <br>    
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()" required><br>  
+  <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">Password</label>
@@ -56,25 +57,23 @@
   <input id="register" type="submit" name="register" value="Register" />
   <input id="login" type="submit" name="login" value="Login" />
 
-            
-        
+
 
 </form>
-<script>
-    // Obtener el botón por su ID
-  //  var button = document.getElementById("register");
 
-    // Habilitar el botón eliminando el atributo disabled
-   // button.removeAttribute("disabled");
-</script>
 
 </body>
+
+
+
+
 <?php
 
 //connection with the db  variable  to have the connectoin ($connection)
 require_once '../../db/conection.php';
-require_once '../../src/features/checkUsername.php';
 
+            
+include('../../src/features/checkForm.php');     
 
 ?>
 

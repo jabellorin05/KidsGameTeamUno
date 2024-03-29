@@ -3,6 +3,7 @@
 
 require_once "../../db/conection.php";
  $username="";
+
 if (isset($_POST["uName"])){
 
     $userName=$_POST["uName"];
@@ -27,6 +28,11 @@ function selectDb($Connection){
 
 // Función para seleccionar usuarios
 function userExists($connection,$userName) {
+  //variable check is the validation are correct or not
+
+    global $validEUsername;
+    $validEUsername=true;
+
     try {
         // Preparar la consulta SQL con un marcador de posición (?)
         $sqlCode = "SELECT userName FROM player WHERE userName = ?";
@@ -43,7 +49,10 @@ function userExists($connection,$userName) {
         
         // Verificar si hay filas en el resultado
         if ($result->num_rows > 0) {
+          
             echo "That Username has already been created in the past. Please try again with another username";
+            $validEUsername=false;
+          
         } 
         
         // Cerrar la declaración y la conexión
@@ -52,8 +61,7 @@ function userExists($connection,$userName) {
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
-
-
+  
 }
 
 
