@@ -45,6 +45,7 @@ function checkIfDbExists($connection, $dbName) {
         createDB($connection);
         return false;
     }
+    DisconnectDB($connection);
 }
 
 
@@ -58,6 +59,7 @@ function createDB($connection) {
         // Si la creación falla, muestra el mensaje de error y detiene el script
        // die("Creation of Database and Tables failed! <br>" . $error);
     }
+    DisconnectDB($connection);
 }
 /*
 

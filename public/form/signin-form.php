@@ -55,10 +55,10 @@
 
 <?php
 require_once '../../db/connection.php';
-include("../../db/structureDb.php");
+//include("../../db/structureDb.php");
 require_once '../../db/Select.php';
 
-checkUserExist();
+checkUserExist(ConnectDb());
 
 
 ?> 
