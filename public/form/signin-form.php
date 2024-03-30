@@ -61,4 +61,7 @@ require_once '../../db/Select.php';
 checkUserExist(ConnectDb());
 
 
+if(isset($_POST["register"]))
+echo "<script>window.location.href'signup-form.php'</script>"
+
 ?> 
