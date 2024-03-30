@@ -29,7 +29,7 @@ function ConnectDb() {
 function DisconnectDB($connection) {
     try {
         $connection->close();
-        echo "disconected successfully.";
+      
     } catch (mysqli_sql_exception $error) {
         die("Disconnection from MySQL failed!<br/>" . $error);
     }

@@ -4,13 +4,13 @@
 
 
 
-/*
+
  $hostName="localhost";
  $userName="root";
  $password="";
 
 // Función para conectar con la base de datos
-function ConnectDB() {
+function ConnectWithDb() {
     $hostName="localhost";
     $userName="root";
     $password="";
@@ -18,7 +18,7 @@ function ConnectDB() {
 
     try {
         $connection = new mysqli($hostName, $userName, $password);
-        echo "conexion success"."<br>";
+        
         return $connection;
     } catch (mysqli_sql_exception $error) {
         // Si la conexión falla, muestra el mensaje de error y detiene el script
@@ -26,8 +26,12 @@ function ConnectDB() {
     }
 }
 
-*/
 
+
+
+$bdName="kidsgames";
+// Conectar a la base de datos
+$connectionDb = ConnectWithDb();
 
 
 
@@ -41,6 +45,7 @@ function checkIfDbExists($connection, $dbName) {
         createDB($connection);
         return false;
     }
+    DisconnectDB($connection);
 }
 
 
@@ -54,6 +59,7 @@ function createDB($connection) {
         // Si la creación falla, muestra el mensaje de error y detiene el script
        // die("Creation of Database and Tables failed! <br>" . $error);
     }
+    DisconnectDB($connection);
 }
 /*
 
@@ -67,9 +73,6 @@ function DisconnectDB($connection) {
 }
 */
 
-$bdName="kidsgames";
-// Conectar a la base de datos
-$connectionDb = ConnectDB();
 
 //check if the db exists
 checkIfDbExists($connectionDb,$bdName);
