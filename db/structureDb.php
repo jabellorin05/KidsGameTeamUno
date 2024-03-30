@@ -4,13 +4,13 @@
 
 
 
-
+/*
  $hostName="localhost";
  $userName="root";
  $password="";
 
 // Función para conectar con la base de datos
-function ConnectDb() {
+function ConnectDB() {
     $hostName="localhost";
     $userName="root";
     $password="";
@@ -26,7 +26,7 @@ function ConnectDb() {
     }
 }
 
-
+*/
 
 
 
@@ -47,7 +47,7 @@ function checkIfDbExists($connection, $dbName) {
 // Función para crear la estructura de la base de datos si aún no existe
 function createDB($connection) {
     try {
-        $connection->multi_query(file_get_contents("3-database-entity.sql"));
+        $connection->multi_query(file_get_contents("../../db/database-entity.sql"));
         echo "Creation success.";
         
     } catch (mysqli_sql_exception $error) {
@@ -55,7 +55,7 @@ function createDB($connection) {
        // die("Creation of Database and Tables failed! <br>" . $error);
     }
 }
-
+/*
 
 // Función para desconectar de la base de datos
 function DisconnectDB($connection) {
@@ -65,11 +65,11 @@ function DisconnectDB($connection) {
         die("Disconnection from MySQL failed!<br/>" . $error);
     }
 }
-
+*/
 
 $bdName="kidsgames";
 // Conectar a la base de datos
-$connectionDb = ConnectDb();
+$connectionDb = ConnectDB();
 
 //check if the db exists
 checkIfDbExists($connectionDb,$bdName);

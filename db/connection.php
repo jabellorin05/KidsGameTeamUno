@@ -16,7 +16,7 @@ function ConnectDb() {
 
     try {
         $connection = new mysqli($hostName, $userName, $password);
-        echo "conexion success"."<br>";
+       // echo "conexion success"."<br>";
         return $connection;
     } catch (mysqli_sql_exception $error) {
         // Si la conexión falla, muestra el mensaje de error y detiene el script
