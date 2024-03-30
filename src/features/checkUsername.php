@@ -3,7 +3,7 @@
 
 require_once "../../db/connection.php";
  $username="";
-
+ $connection=ConnectDb();
 if (isset($_POST["uName"])){
 
     $userName=$_POST["uName"];
@@ -11,10 +11,10 @@ if (isset($_POST["uName"])){
 
 
 //2-SELECT THE DATABASE
-function selectDb($Connection){
+function selectDb($connection){
     try {
         //$selectDBUsers = mysqli_select_db($connection, "users");
-        mysqli_select_db($Connection, "kidsgames");
+        mysqli_select_db($connection, "kidsgames");
     } catch (mysqli_sql_exception $error) {
         //If the selection failed, display error message and stop the script
        // die("Connection to the Database failed!<br/> " . $error);
@@ -69,12 +69,12 @@ function userExists($connection,$userName) {
 
 $bdName="kidsgames";
 // Conectar a la base de datos
-$connectionDb = $connection;
+//$connectionDb = $connection;
 
 //select db
-selectDb($connectionDb);
+selectDb($connection);
 //selecs users
-userExists($connectionDb,$userName);
+userExists($connection,$userName);
 
 
 ?>

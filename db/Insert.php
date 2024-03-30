@@ -4,8 +4,8 @@
 
 
 
-//include("connection.php");
-
+include("./connection.php");
+include("../src/features/newUserClass.php");
 
 
 function insertNewPlayer(NewUser $newUserN) {
