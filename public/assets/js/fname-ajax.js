@@ -1,7 +1,7 @@
 function ValidateFname(){
    
 
-    var fName = document.getElementById("fName").value || "";
+    var fName = document.getElementById("fName").value.trim();
   
     // Crea una nueva instancia de XMLHttpRequest
     var xmlhttp = new XMLHttpRequest();

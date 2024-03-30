@@ -3,13 +3,14 @@
 
 $warn_msg = "";
 $only_Letter_msg = "The name must have only letters [a-z].";
-$only_cLetter_msg = "Must start with capital letter";
+$only_cLetter_msg = "The name must start with capital letter";
 $empty_msg ="The name is empty";
 global $validName;
 $validName=true;
-$fName = isset($_POST["fname"]) ? $_POST["fname"] : '';
+$fName = isset($_POST["fName"]) ? $_POST["fName"] : '';
 
-if ($fName == '') {
+if (empty($fName)) {
+  
     echo $empty_msg;
     $validName=false;
 } elseif (!preg_match('/^[a-zA-Z]+$/', $fName)) {

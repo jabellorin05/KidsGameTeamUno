@@ -49,11 +49,11 @@
   <span id="cPasswordMessage"></span>  
  
   <label for="inputName">First Name</label>
-  <input id="fName" type="text" name="fname" placeholder="John" onkeyup="ValidateFname()" required value="<?php if(isset($_POST["register"])) $fName = $_POST["fname"]; if(isset($fName)) echo $fName  ?>"><br>  
+  <input id="fName" type="text" name="fName" placeholder="John" onkeyup="ValidateFname()" required value="<?php if(isset($_POST["register"])) $fName = $_POST["fName"]; if(isset($fName)) echo $fName  ?>"><br>  
   <span id="fNameMessage"></span>  
   <br>  
   <label for="inputlname">Last Name|Nom</label>
-  <input id="lName" type="text" name="lname" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lname"];  if(isset($lName)) echo $lName  ?>"><br> 
+  <input id="lName" type="text" name="lName" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lName"];  if(isset($lName)) echo $lName  ?>"><br> 
   <span id="lNameMessage"></span><br>
  
   

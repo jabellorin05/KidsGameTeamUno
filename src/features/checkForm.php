@@ -32,8 +32,8 @@ if (isset($_POST["register"])) {
     if($validEUsername==true && $validUsername==true && $validName==true && $validlName==true && $validPassowrd==true) {
         include("../../src/features/newUserClass.php");
         $userName=$_POST["uName"];        
-        $fName=$_POST["fname"];        
-        $lName=$_POST["lname"];       
+        $fName=$_POST["fName"];        
+        $lName=$_POST["lName"];       
         $password=$_POST["password"];
          echo $userName;   
         $newUserN = new NewUser($userName, $fName, $lName,$password);
