@@ -25,23 +25,32 @@ function checkUserExist($connection) {
             $result = $queryRessult->fetch_assoc();
             return $result["registrationOrder"];
         } else {
-            echo "Username does not exist";
+          
+            return null; // Devolver null si el usuario no existe
         }
     }
 }
 
 function checkPassword($connection, $registrationOrder) {
-    $password = $_POST["password"];
-
-    $sql_query = "Select passCode FROM authenticator WHERE registrationOrder = $registrationOrder";
-    $queryResult = $connection->query($sql_query);
-    $result = $queryResult->fetch_assoc();
-
-    if (password_verify($password, $result["passCode"])) {
-        echo "Authentication success";
-        echo " <script>alert('Login successfull You are going to the Home page') </script> <script>window.location.href = 'Home';</script>";
+    if ($registrationOrder !== null) {
+        if(isset($_POST["password"])){
+            $password="";
+            $password = $_POST["password"];
+            $sql_query = "SELECT passCode FROM authenticator WHERE registrationOrder = $registrationOrder";
+            $queryResult = $connection->query($sql_query);
+            $result = $queryResult->fetch_assoc();
+        
+            if (password_verify($password, $result["passCode"])) {
+                // Autenticación exitosa
+                echo "Authentication success";
+                echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = 'Home';</script>";
+            } else {
+                // Contraseña incorrecta
+                echo "Password incorrect. Try again";
+            }
+        }
     } else {
-        echo "Password incorrect. Try again";
+        echo "User not found"; // Mensaje adicional si el usuario no existe
     }
 }
 
