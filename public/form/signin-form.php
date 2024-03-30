@@ -62,6 +62,6 @@ checkUserExist(ConnectDb());
 
 
 if(isset($_POST["register"]))
-echo "<script>window.location.href'signup-form.php'</script>"
+echo "<script>window.location.href='signup-form.php'</script>"
 
 ?> 
