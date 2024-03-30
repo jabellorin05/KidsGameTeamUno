@@ -44,7 +44,7 @@ if (isset($_POST["register"])) {
         insertNewPlayer($newUserN);
         insertPassword($newUserN);
         // Mensaje que deseas mostrar al usuario
-       $message = "Thanks for logging in. You are going to the Home Page";
+       $message = "Thanks for logging up. You are going to the Home Page";
          
         // Redirige al usuario a otra página después de cierto tiempo
 

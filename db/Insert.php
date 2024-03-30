@@ -48,7 +48,9 @@ function insertNewPlayer(NewUser $newUserN) {
 function insertPassword(NewUser $newUser){
 $connectionDBB=ConnectDb();
 selectDb($connectionDBB);
-$sql="INSERT INTO authenticator (passCode) values ('$newUser->password')";
+//encrypt the password with the function hash method.
+$encryptedPassword=password_hash($newUser->password,PASSWORD_DEFAULT);
+$sql="INSERT INTO authenticator (passCode) values ('$encryptedPassword')";
 
 
 $sql_Insert=$connectionDBB->query($sql);
