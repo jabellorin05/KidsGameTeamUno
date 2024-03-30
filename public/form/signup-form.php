@@ -23,7 +23,6 @@
 
 <script src="../assets/js/fname-ajax.js"></script>
 <script src="../assets/js/lname-ajax.js"></script>
-<script src="../assets/js/email-ajax.js"></script>
 <script src="../assets/js/uname-ajax.js"></script>
 <script src="../assets/js/password-ajax.js"></script>
 <script src="../assets/js/cPassword-ajax.js"></script>
@@ -56,10 +55,7 @@
   <label for="inputlname">Last Name|Nom</label>
   <input id="lName" type="text" name="lname" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lname"];  if(isset($lName)) echo $lName  ?>"><br> 
   <span id="lNameMessage"></span><br>
-  <label for="email">E-mail</label>
-  <input id="email" type="text" name="email" placeholder="JohnDoe@gmail.com" required onkeyup="ValidateEmail()" value="<?php if(isset($_POST["register"])) $email = $_POST["email"];  if(isset($email)) echo $email  ?>"><br>
-  <span id="emailMessage"></span><br>
-  
+ 
   
   
   <!--Submit button to send form data-->
@@ -79,11 +75,11 @@
 <?php
 
 //connection with the db  variable  to have the connectoin ($connection)
-require_once '../../db/conection.php';
+require_once '../../db/connection.php';
 
             
 include('../../src/features/checkForm.php');     
-
+include("../../db/structureDb.php");
 ?>
 
 </head>

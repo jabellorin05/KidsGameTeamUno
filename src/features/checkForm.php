@@ -5,7 +5,7 @@ if (isset($_POST["register"])) {
    
 
 
-  
+    include("../../src/features/newUserClass.php");
     require_once '../../src/features/checkUsername.php';
     if($validEUsername==false)
      echo "<br>";
@@ -22,15 +22,28 @@ if (isset($_POST["register"])) {
 
     if($password==false)
     echo "<br>";
-    require_once '../../src/features/email_validation.php';
-    if($validEmail==false)
-    echo "<br>";
 
- 
+    
+
+   
+
 
     //if all the validation are correct the variable keep being true and it able to go to the next page
-    if($validEUsername==true && $validUsername==true && $validName==true && $validlName==true && $validPassowrd==true  && $validPassowrd==true) {
-       // Mensaje que deseas mostrar al usuario
+    if($validEUsername==true && $validUsername==true && $validName==true && $validlName==true && $validPassowrd==true) {
+       
+        $userName=$_POST["uName"];        
+        $fName=$_POST["fname"];        
+        $lName=$_POST["lname"];       
+        $password=$_POST["password"];
+         echo $userName;   
+        $newUserN = new NewUser($userName, $fName, $lName,$password);
+
+
+
+        require_once '../../db/Insert.php';
+        insertNewPlayer($newUserN);
+        insertPassword($newUserN);
+        // Mensaje que deseas mostrar al usuario
        $message = "Thanks for logging in. You are going to the Home Page";
          
         // Redirige al usuario a otra página después de cierto tiempo

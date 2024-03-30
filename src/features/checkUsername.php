@@ -1,7 +1,7 @@
 <?php
 //connection with db info 
 
-require_once "../../db/conection.php";
+require_once "../../db/connection.php";
  $username="";
 
 if (isset($_POST["uName"])){
