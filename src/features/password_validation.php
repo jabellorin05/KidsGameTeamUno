@@ -18,7 +18,7 @@ if ($password == '') {
     echo $max_lenght;
     $validPassowrd=false;
 }elseif($password!==$passwordC){
-    $validPassowrd=true;
+    $validPassowrd=false;
     echo "Password and Confirm Password must be the same.";
 }
 
