@@ -38,5 +38,5 @@ function DisconnectDB($connection) {
 
 
 
-$connection=ConnectDb();
+//$connection=ConnectDb();
 ?>

@@ -5,7 +5,7 @@ if (isset($_POST["register"])) {
    
 
 
-    include("../../src/features/newUserClass.php");
+
     require_once '../../src/features/checkUsername.php';
     if($validEUsername==false)
      echo "<br>";
@@ -30,7 +30,7 @@ if (isset($_POST["register"])) {
 
     //if all the validation are correct the variable keep being true and it able to go to the next page
     if($validEUsername==true && $validUsername==true && $validName==true && $validlName==true && $validPassowrd==true) {
-       
+        include("../../src/features/newUserClass.php");
         $userName=$_POST["uName"];        
         $fName=$_POST["fname"];        
         $lName=$_POST["lname"];       
