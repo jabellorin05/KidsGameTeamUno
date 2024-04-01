@@ -31,10 +31,21 @@ function checkUserExist($connection) {
     }
 }
 
+
+
+$response = [
+"userNotFound"=>false,
+"success"=>false,
+"invalidPassword"=>false
+
+
+
+];
 function checkPassword($connection, $registrationOrder) {
+    global $response;
+
     if ($registrationOrder !== null) {
         if(isset($_POST["password"])){
-            $password="";
             $password = $_POST["password"];
             $sql_query = "SELECT passCode FROM authenticator WHERE registrationOrder = $registrationOrder";
             $queryResult = $connection->query($sql_query);
@@ -42,21 +53,19 @@ function checkPassword($connection, $registrationOrder) {
         
             if (password_verify($password, $result["passCode"])) {
                 // Autenticación exitosa
-                echo "Authentication success";
-                echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = 'Home';</script>";
+                $response['success'] = true;
             } else {
                 // Contraseña incorrecta
-                echo "Password incorrect. Try again";
+                $response['invalidPassword'] = true;
             }
         }
     } else {
-        echo "User not found"; // Mensaje adicional si el usuario no existe
+        // Usuario no encontrado
+        $response['userNotFound'] = true;
     }
+
+    return $response;
 }
 
-$connectionToDb = ConnectDb();
-if ($connectionToDb) {
-    checkPassword($connectionToDb, checkUserExist($connectionToDb));
-    DisconnectDB($connectionToDb);
-}
+
 ?>
