@@ -32,6 +32,32 @@ function checkUserExist($connection) {
 }
 
 
+function GetUserId($connection,$username){
+
+ $sql_query = "SELECT id from player where userName = '$username' ";
+
+
+ selectDb($connection);
+
+
+ $sqlResult=$connection->query($sql_query);
+ $rows = $sqlResult->num_rows;
+
+ if($rows>0){
+    $result=$sqlResult->fetch_assoc();
+    $id=$result["id"];
+    return $id;
+ }
+
+ else{
+
+    echo "Username not found";
+ }   
+
+ return null;
+}
+
+
 
 $response = [
 "userNotFound"=>false,

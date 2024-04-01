@@ -7,11 +7,22 @@ $connectionToDb = ConnectDb();
 if ($connectionToDb) {
     $result = checkPassword($connectionToDb, checkUserExist($connectionToDb));
 
-    echo  var_dump($result["success"]);
     if($result["success"]){
             
+            $username = $_POST["uName"];
+            $id=GetUserId($connectionToDb,$username);
+            print($id);
+           
+           
+            session_start();
+
+            $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $id;
         echo "Authentication success";
-        echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = 'Home';</script>";
+
+        echo  $_SESSION['username']. $_SESSION['user_id'];
+
+        //echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = '../../index.php';</script>";
     }else if($result["invalidPassword"]){
      
         echo "Password incorrect. Try again";
@@ -31,8 +42,9 @@ if ($connectionToDb) {
 
 
 
+include("timeOut.php");
 
-
+timeOut();
 
 
 
