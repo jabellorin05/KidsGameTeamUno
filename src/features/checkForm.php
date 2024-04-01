@@ -45,7 +45,7 @@ if (isset($_POST["register"])) {
         insertPassword($newUserN);
         // Mensaje que deseas mostrar al usuario
        $message = "Thanks for logging up. You are going to the Home Page";
-         
+     
         // Redirige al usuario a otra página después de cierto tiempo
 
        echo"<script>alert('$message'); window.location.href = 'home.php';</script>";

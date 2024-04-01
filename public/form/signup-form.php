@@ -80,6 +80,11 @@ require_once '../../db/connection.php';
             
 include('../../src/features/checkForm.php');     
 include("../../db/structureDb.php");
+
+
+if(isset($_POST["login"]))
+echo "<script>window.location.href='signin-form.php'</script>"
+
 ?>
 
 </head>

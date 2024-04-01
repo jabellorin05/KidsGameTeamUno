@@ -56,12 +56,12 @@
 <?php
 require_once '../../db/connection.php';
 //include("../../db/structureDb.php");
-require_once '../../db/Select.php';
-
-checkUserExist(ConnectDb());
+//require_once '../../db/Select.php';
+include("../../src/features/signin.php");
+//checkUserExist(ConnectDb());
 
 
 if(isset($_POST["register"]))
-echo "<script>window.location.href'signup-form.php'</script>"
+echo "<script>window.location.href='signup-form.php'</script>"
 
 ?> 
