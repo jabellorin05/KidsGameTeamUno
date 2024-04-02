@@ -10,14 +10,14 @@ function selectDb($connection) {
     }
 }
 
-function checkUserExist($connection) {
-    if (isset($_POST["login"])) {
+function GetRegistrationOrder($connection) {
+  
         $username = $_POST["uName"];
         $password = $_POST["password"];
         
         selectDb($connection);
         
-        $sql_query = "SELECT userName, registrationOrder FROM player WHERE username = '$username'";
+        $sql_query = "SELECT  registrationOrder FROM player WHERE username = '$username'";
         $queryRessult = $connection->query($sql_query);
         $rows = $queryRessult->num_rows;
         
@@ -28,7 +28,7 @@ function checkUserExist($connection) {
           
             return null; // Devolver null si el usuario no existe
         }
-    }
+    
 }
 
 
