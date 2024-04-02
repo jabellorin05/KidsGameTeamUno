@@ -38,8 +38,6 @@ if (isset($_POST["register"])) {
          echo $userName;   
         $newUserN = new NewUser($userName, $fName, $lName,$password);
 
-
-
         require_once '../../db/Insert.php';
         insertNewPlayer($newUserN);
         insertPassword($newUserN);
