@@ -31,15 +31,15 @@
 
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ExistUserName()" required value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ExistUserName()" value="<?php  if(isset($_POST["Edit"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
   <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">New Password</label>
-  <input id="password" type="password" name="password" placeholder="New Password" required onkeyup="ValidatePassword()"  > <br> 
+  <input id="password" type="password" name="password" placeholder="New Password"  onkeyup="ValidatePassword()"  > <br> 
   <span id="passwordMessage"></span><br>  
   <label for="password">Confirm Password</label>
-  <input id="passwordC" type="password" name="passwordC" placeholder="Confirm Password" required onkeyup="ValidatePassword()"   >  <br>  <br>
+  <input id="passwordC" type="password" name="passwordC" placeholder="Confirm Password" onkeyup="ValidatePassword()"   >  <br>  <br>
   <span id="cPasswordMessage"></span>  
  <!--
   <label for="inputName">First Name</label>

@@ -28,12 +28,12 @@
 
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="" required value="<?php  if(isset($_POST["login"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup=""  value="<?php  if(isset($_POST["login"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
   <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Password" required onkeyup=""  > <br> 
+  <input id="password" type="password" name="password" placeholder="Password"  onkeyup=""  > <br> 
   <span id="passwordMessage"></span><br>  
   
  
@@ -42,7 +42,7 @@
   <!--Submit button to send form data-->
   <input id="register" type="submit" name="register" value="Register" />
   <input id="login" type="submit" name="login" value="Login" />
-
+  <a href="pw-update-form.php">Forgot Password?</a>
 
 
 </form>
