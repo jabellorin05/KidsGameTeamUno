@@ -11,6 +11,7 @@ if (isset($_POST["uName"])){
 
 
 //2-SELECT THE DATABASE
+if (!function_exists('selectDb')) {
 function selectDb($connection){
     try {
         //$selectDBUsers = mysqli_select_db($connection, "users");
@@ -21,12 +22,13 @@ function selectDb($connection){
     }
 
 }
-
+}
 
 
 
 
 // Función para seleccionar usuarios
+if (!function_exists('userExists')) {
 function userExists($connection,$userName) {
   //variable check is the validation are correct or not
 
@@ -63,7 +65,7 @@ function userExists($connection,$userName) {
     }
   
 }
-
+}
 
 
 
