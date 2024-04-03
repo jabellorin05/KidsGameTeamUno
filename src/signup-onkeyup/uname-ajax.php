@@ -23,7 +23,7 @@ if ($uName == '') {
     echo $max_lenght;
 }
 //check if the username already exist.
-include_once "../features/checkUsername.php";
+include_once "../../src/features/checkUsername.php";
 //include("../../src/features/checkUsername.php");
 
 ?> 
