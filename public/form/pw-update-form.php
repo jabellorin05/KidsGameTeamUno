@@ -19,8 +19,8 @@
 
 
 <!-- call my js files -->
-<script src="../assets/js/signup-onkeyup/uname-exist-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
+<script src="../assets/js/uname-exist-ajax.js"></script>
+<script src="../assets/js/password-ajax.js"></script>
 
 <body>
 
@@ -74,7 +74,7 @@ require_once '../../db/connection.php';
             
 include('../../src/features/checkForm.php');     
 include("../../db/structureDb.php");
-include("../../src/features/pw-update.php");
+include("../../src/features/updatePassword.php");
 
 if(isset($_POST["Login"]))
 echo "<script>window.location.href='signin-form.php'</script>"
