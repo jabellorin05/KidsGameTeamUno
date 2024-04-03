@@ -21,24 +21,24 @@
 
 <!-- call my js files -->
 
-<script src="../assets/js/fname-ajax.js"></script>
-<script src="../assets/js/lname-ajax.js"></script>
-<script src="../assets/js/uname-ajax.js"></script>
-<script src="../assets/js/password-ajax.js"></script>
-<script src="../assets/js/cPassword-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/fname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/lname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/uname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
 <script src="../assets/js/uname-Exist.js"></script>
 <script src="../assets/js/checkForm-ajax.js"></script>
 <body>
 
 <!--Form-->
+
+
 <form id="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
   <!--Form fields to input data-->
-
 
  
   <label for="inputName">UserName</label>
   <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
-  <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
+  <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">Password</label>
@@ -52,7 +52,7 @@
   <input id="fName" type="text" name="fName" placeholder="John" onkeyup="ValidateFname()"  value="<?php if(isset($_POST["register"])) $fName = $_POST["fName"]; if(isset($fName)) echo $fName  ?>"><br>  
   <span id="fNameMessage"></span>  
   <br>  
-  <label for="inputlname">Last Name|Nom</label>
+  <label for="inputlname">Last Name</label>
   <input id="lName" type="text" name="lName" placeholder="Doe" onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lName"];  if(isset($lName)) echo $lName  ?>"><br> 
   <span id="lNameMessage"></span><br>
  
@@ -63,7 +63,7 @@
   <input id="login" type="submit" name="login" value="Login" />
 
 
-
+  
 </form>
 
 
@@ -78,7 +78,7 @@
 require_once '../../db/connection.php';
 
             
-include('../../src/features/checkForm.php');     
+include('../../src/features/signup.php');     
 include("../../db/structureDb.php");
 
 

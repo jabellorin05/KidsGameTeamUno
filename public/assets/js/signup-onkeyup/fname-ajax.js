@@ -1,13 +1,13 @@
-function capitalLetter(){
-    
+function ValidateFname(){
+   
 
-    var fName = document.getElementById("fName").value;
-
+    var fName = document.getElementById("fName").value.trim();
+  
     // Crea una nueva instancia de XMLHttpRequest
     var xmlhttp = new XMLHttpRequest();
 
     // Configura la solicitud POST
-    xmlhttp.open("POST", "../../public/assets/js/signup-onkeyup/capitalLetter.php", true);
+    xmlhttp.open("POST", "../../src/signup-onkeyup/fname-ajax.php", true);
 
     // Establece el encabezado de la solicitud
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

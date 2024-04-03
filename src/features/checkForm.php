@@ -1,5 +1,5 @@
 <?php
-//connection with db info 
+
 if (isset($_POST["register"])) {
 
    

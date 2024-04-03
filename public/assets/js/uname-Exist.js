@@ -1,7 +1,7 @@
 function ValidateUserNameExist(){
    
 
-    var uName = document.getElementById("uName").value || "";
+    var uName = document.getElementById("uName").value.replace(/\s/g, '');
    
     // Crea una nueva instancia de XMLHttpRequest
     var xmlhttp = new XMLHttpRequest();

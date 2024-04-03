@@ -1,25 +1,27 @@
-function ValidateEmail(){
-   
 
-    var email = document.getElementById("email").value || "";
-  
+
+function ExistUserName(){
+   
+   
+    var uName = document.getElementById("uName").value.replace(/\s/g, '');
+   
     // Crea una nueva instancia de XMLHttpRequest
     var xmlhttp = new XMLHttpRequest();
 
     // Configura la solicitud POST
-    xmlhttp.open("POST", "../../src/features/email_validation.php", true);
+    xmlhttp.open("POST", "../../src/features/uname_exist.php", true);
 
     // Establece el encabezado de la solicitud
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     // Envía los datos al servidor
-    xmlhttp.send("email=" + email);
+    xmlhttp.send("uName=" + uName);
 
     // Maneja la respuesta del servidor
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText != null){
-                document.getElementById("emailMessage").innerHTML = this.responseText;
+                document.getElementById("uNameMessage").innerHTML = this.responseText;
                
 
             }
