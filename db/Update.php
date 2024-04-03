@@ -10,9 +10,9 @@ function updatePassword($connection,$registrationOrder,$password){
 
     if($query==null){
 
-        echo "update went wrong";
+       return false;
     }else{
-        echo "<script>alert('Update successfully')<script/>";
+       return true;
     }
    
 

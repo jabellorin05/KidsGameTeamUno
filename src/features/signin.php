@@ -19,12 +19,14 @@ if ($connectionToDb) {
 
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $id;
+            $_SESSION['game'] = 1 ; 
+            $_SESSION['lives'] = 6;
         
             echo "Authentication success";
 
        
 
-        //echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = '../../index.php';</script>";
+        echo "<script>alert('Login successful. You are being redirected to the Home page'); window.location.href = '../../index.php';</script>";
     }else if($result["invalidPassword"]){
      
         echo "Password incorrect. Try again";

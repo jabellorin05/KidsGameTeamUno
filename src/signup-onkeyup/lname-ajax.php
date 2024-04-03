@@ -3,7 +3,7 @@
 
 $warn_msg = "";
 $only_Letter_msg = "The Last name must have only letters [a-z].";
-$only_cLetter_msg = "Must start with capital letter";
+$only_cLetter_msg = "The Last Name Must start with capital letter";
 $empty_msg ="The Last name is empty";
 global $validlName;
 $validlName=true;
