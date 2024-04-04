@@ -14,13 +14,23 @@
 
 <meta name="Author" content="xxxx" />
 
+<?php include('../../public/template/head.php'); ?>
+<?php include('../../public/template/header.php'); ?>
+<?php include('../../public/template/nav.php'); ?>
+<div class="container">
+
+  <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center"> <!-- Añadida la clase text-center para centrar el contenido -->
+          <h5 class="card-title">Update Password</h5>
 
 
 
 
 <!-- call my js files -->
-<script src="../assets/js/uname-exist-ajax.js"></script>
-<script src="../assets/js/password-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/uname-exist-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
 
 <body>
 
@@ -53,13 +63,20 @@
   
   
   <!--Submit button to send form data-->
-  <input id="register" type="submit" name="Edit" value="Edit" />
-  <input id="login" type="submit" name="Login" value="Login" />
+  <input id="register" class="btn btn-primary" type="submit" name="Edit" value="Edit" />
+  <input id="login" class="btn btn-primary" type="submit" name="Login" value="Login" />
 
 
 
 </form>
-
+</div>
+      </div>
+    </div>
+    <!-- Other game levels go here -->
+  </div>
+</div>
+<?php include('../../public/template/footer.php'); ?>
+<script src="../../public/public/template/main.js"></script>
 
 </body>
 
@@ -74,7 +91,7 @@ require_once '../../db/connection.php';
             
 include('../../src/features/checkForm.php');     
 include("../../db/structureDb.php");
-include("../../src/features/updatePassword.php");
+include("../../src/features/pw-update.php");
 
 if(isset($_POST["Login"]))
 echo "<script>window.location.href='signin-form.php'</script>"

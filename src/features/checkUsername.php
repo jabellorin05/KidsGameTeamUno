@@ -76,6 +76,7 @@ $bdName="kidsgames";
 //select db
 selectDb($connection);
 //selecs users
+
 userExists($connection,$userName);
 
 
