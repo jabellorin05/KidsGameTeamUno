@@ -12,8 +12,16 @@
 
 <meta name="Author" content="xxxx" />
 
+<?php include('../../public/template/head.php'); ?>
+<?php include('../../public/template/header.php'); ?>
+<?php include('../../public/template/nav.php'); ?>
+<div class="container">
 
-
+  <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center"> <!-- Añadida la clase text-center para centrar el contenido -->
+          <h5 class="card-title">Signin</h5>
 
 
 <!-- call my js files -->
@@ -40,13 +48,20 @@
   
   
   <!--Submit button to send form data-->
-  <input id="register" type="submit" name="register" value="Register" />
-  <input id="login" type="submit" name="login" value="Login" />
+  <input id="register" class="btn btn-primary" type="submit" name="register" value="Register" />
+  <input id="login" class="btn btn-primary" type="submit" name="login" value="Login" />
   <a href="pw-update-form.php">Forgot Password?</a>
 
 
 </form>
-
+</div>
+      </div>
+    </div>
+    <!-- Other game levels go here -->
+  </div>
+</div>
+<?php include('../../public/template/footer.php'); ?>
+<script src="../../public/public/template/main.js"></script>
 
 </body>
 

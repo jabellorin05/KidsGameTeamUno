@@ -15,17 +15,25 @@
 
 <meta name="Author" content="xxxx" />
 
+<?php include('../../public/template/head.php'); ?>
+<?php include('../../public/template/header.php'); ?>
+<?php include('../../public/template/nav.php'); ?>
+<div class="container">
 
+  <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body text-center"> <!-- Añadida la clase text-center para centrar el contenido -->
+          <h5 class="card-title">Signup</h5>
 
 
 
 <!-- call my js files -->
 
-<script src="../assets/js/fname-ajax.js"></script>
-<script src="../assets/js/lname-ajax.js"></script>
-<script src="../assets/js/uname-ajax.js"></script>
-<script src="../assets/js/password-ajax.js"></script>
-<script src="../assets/js/cPassword-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/fname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/lname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/uname-ajax.js"></script>
+<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
 <script src="../assets/js/uname-Exist.js"></script>
 <script src="../assets/js/checkForm-ajax.js"></script>
 <body>
@@ -39,7 +47,7 @@
  
   <label for="inputName">UserName</label>
   <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
-  <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
+  <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">Password</label>
@@ -60,13 +68,20 @@
   
   
   <!--Submit button to send form data-->
-  <input id="register" type="submit" name="register" value="Register" />
-  <input id="login" type="submit" name="login" value="Login" />
+  <input id="register"  class="btn btn-primary btn-block" type="submit" name="register" value="Register" />
+  <input id="login"  class="btn btn-primary btn-block" type="submit" name="login" value="Login" />
 
 
   
 </form>
-
+</div>
+      </div>
+    </div>
+    <!-- Other game levels go here -->
+  </div>
+</div>
+<?php include('../../public/template/footer.php'); ?>
+<script src="../../public/public/template/main.js"></script>
 
 </body>
 
@@ -79,7 +94,7 @@
 require_once '../../db/connection.php';
 
             
-include('../../src/features/checkForm.php');     
+include('../../src/features/signup.php');     
 include("../../db/structureDb.php");
 
 
