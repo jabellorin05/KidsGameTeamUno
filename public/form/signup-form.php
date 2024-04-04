@@ -21,10 +21,11 @@
 
 <!-- call my js files -->
 
-<script src="../assets/js/signup-onkeyup/fname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/lname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/uname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
+<script src="../assets/js/fname-ajax.js"></script>
+<script src="../assets/js/lname-ajax.js"></script>
+<script src="../assets/js/uname-ajax.js"></script>
+<script src="../assets/js/password-ajax.js"></script>
+<script src="../assets/js/cPassword-ajax.js"></script>
 <script src="../assets/js/uname-Exist.js"></script>
 <script src="../assets/js/checkForm-ajax.js"></script>
 <body>
@@ -38,7 +39,7 @@
  
   <label for="inputName">UserName</label>
   <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
-  <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
+  <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
   <label for="password">Password</label>
@@ -78,7 +79,7 @@
 require_once '../../db/connection.php';
 
             
-include('../../src/features/signup.php');     
+include('../../src/features/checkForm.php');     
 include("../../db/structureDb.php");
 
 
