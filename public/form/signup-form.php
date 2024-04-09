@@ -1,109 +1,81 @@
 
-
-
 <!DOCTYPE html>
-
 <html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="Author" content="xxxx" />
-
-<?php include('../../public/template/head.php'); ?>
-<?php include('../../public/template/header.php'); ?>
-<?php include('../../public/template/nav.php'); ?>
+<?php 
+    require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
+    require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/head.php'
+    ?>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/fname-ajax.js"></script>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/lname-ajax.js"></script>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/uname-ajax.js"></script>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/pcode1-ajax.js"></script>
+<body>
+<?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/nav.php'; ?>
 <div class="container">
-
   <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
     <div class="col-md-6">
       <div class="card">
         <div class="card-body text-center"> <!-- Añadida la clase text-center para centrar el contenido -->
           <h5 class="card-title">Signup</h5>
+              <form id="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
+                <!--Form fields to input data-->
 
+              
+                <label for="inputName">UserName</label>
+                <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>"><br>  
+                <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
 
-
-<!-- call my js files -->
-
-<script src="../assets/js/signup-onkeyup/fname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/lname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/uname-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
-<script src="../assets/js/uname-Exist.js"></script>
-<script src="../assets/js/checkForm-ajax.js"></script>
-<body>
-
-<!--Form-->
-
-
-<form id="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
-  <!--Form fields to input data-->
-
- 
-  <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
-  <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
-
- 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Password"  onkeyup="ValidatePassword()"  > <br> 
-  <span id="passwordMessage"></span><br>  
-  <label for="password">Confirm Password</label>
-  <input id="passwordC" type="password" name="passwordC" placeholder="Password"  onkeyup="ValidatePassword()"   >  <br>  <br>
-  <span id="cPasswordMessage"></span>  
- 
-  <label for="inputName">First Name</label>
-  <input id="fName" type="text" name="fName" placeholder="John" onkeyup="ValidateFname()"  value="<?php if(isset($_POST["register"])) $fName = $_POST["fName"]; if(isset($fName)) echo $fName  ?>"><br>  
-  <span id="fNameMessage"></span>  
-  <br>  
-  <label for="inputlname">Last Name</label>
-  <input id="lName" type="text" name="lName" placeholder="Doe" onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lName"];  if(isset($lName)) echo $lName  ?>"><br> 
-  <span id="lNameMessage"></span><br>
- 
-  
-  
-  <!--Submit button to send form data-->
-  <input id="register"  class="btn btn-primary btn-block" type="submit" name="register" value="Register" />
-  <input id="login"  class="btn btn-primary btn-block" type="submit" name="login" value="Login" />
-
-
-  
-</form>
-</div>
+              
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="Password"  onkeyup="ValidatePassword()"  > <br> 
+                <span id="passwordMessage"></span><br>  
+                <label for="password">Confirm Password</label>
+                <input id="passwordC" type="password" name="passwordC" placeholder="Password"  onkeyup="ValidatePassword()"   >  <br>  <br>
+                <span id="cPasswordMessage"></span>  
+              
+                <label for="inputName">First Name</label>
+                <input id="fName" type="text" name="fName" placeholder="John" onkeyup="ValidateFname()"  value="<?php if(isset($_POST["register"])) $fName = $_POST["fName"]; if(isset($fName)) echo $fName  ?>"><br>  
+                <span id="fNameMessage"></span>  
+                <br>  
+                <label for="inputlname">Last Name</label>
+                <input id="lName" type="text" name="lName" placeholder="Doe" onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lName"];  if(isset($lName)) echo $lName  ?>"><br> 
+                <span id="lNameMessage"></span><br>
+              
+                
+                
+                <!--Submit button to send form data-->
+                <input id="register"  class="btn btn-primary btn-block" type="submit" name="register" value="Register" />
+                <input id="login"  class="btn btn-primary btn-block" type="submit" name="login" value="Login" />        
+              </form>
+            </div>
       </div>
     </div>
     <!-- Other game levels go here -->
   </div>
 </div>
-<?php include('../../public/template/footer.php'); ?>
-<script src="../../public/public/template/main.js"></script>
+<?php //require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'public/template/footer.php' ?>
+
 
 </body>
-
-
-
 
 <?php
 
 //connection with the db  variable  to have the connectoin ($connection)
-require_once '../../db/connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/Database.php';
 
             
-include('../../src/features/signup.php');     
-include("../../db/structureDb.php");
-
+require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'src/features/signup.php';     
+require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/create.php';
 
 if(isset($_POST["login"]))
-echo "<script>window.location.href='signin-form.php'</script>"
+  echo "<script>window.location.href='signin-form.php'</script>"
+
+
 
 ?>
 
-</head>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/footer.php'; ?>
 
 </html>
 

@@ -1,10 +1,10 @@
 
 <?php
-
+require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
 $warn_msg = "";
-$start_Letter_msg = "The username must start with Capital letter .";
-$max_lenght = "Username must contain at least 8 characters";
-$empty_msg ="The username is empty";
+$start_Letter_msg = "<div class='text-center'>The username must start with Capital letter .";
+$max_lenght = "<div class='text-center'>Username must contain at least 8 characters";
+$empty_msg ="<div class='text-center'>The username is empty";
 global $validUsername;
 $validUsername=true;
 
@@ -23,7 +23,7 @@ if ($uName == '') {
     echo $max_lenght;
 }
 //check if the username already exist.
-include_once "../../src/features/checkUsername.php";
+require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . "src/features/checkUsername.php";
 //include("../../src/features/checkUsername.php");
 
 ?> 

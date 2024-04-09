@@ -2,9 +2,9 @@
 <?php
 
 $warn_msg = "";
-$only_Letter_msg = "The name must have only letters [a-z].";
-$only_cLetter_msg = "The name must start with capital letter";
-$empty_msg ="The name is empty";
+$only_Letter_msg = "<div class='text-center'>The name must have only letters [a-z].";
+$only_cLetter_msg = "<div class='text-center'>The name must start with capital letter";
+$empty_msg ="<div class='text-center'>The name is empty";
 global $validName;
 $validName=true;
 $fName = isset($_POST["fName"]) ? $_POST["fName"] : '';

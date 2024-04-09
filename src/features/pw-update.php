@@ -1,8 +1,9 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php';
 
-require_once '../../src/features/uname_exist.php';
-require_once '../../db/update.php';
-require_once '../../src/signup-onkeyup/pcode1-ajax.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/src/features/uname_exist.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'db/update.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'src/signup-onkeyup/pcode1-ajax.php';
 if(isset($_POST["Edit"])){
 
    

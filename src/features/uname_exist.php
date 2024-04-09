@@ -5,7 +5,7 @@ require_once '../../db/Select.php';
 
 $warn_msg = "";
 
-$empty_msg ="The username is empty";
+$empty_msg ="<div class='text-center'>The username is empty";
 
 global $validUsername;
 $validUsername=true;

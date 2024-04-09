@@ -1,22 +1,14 @@
-
-
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');   ?>
 <!DOCTYPE html>
 
 <html lang="en">
+  <!-- JOSE USA ESTA PAGINA COMO EJEMPLO -->
 
-<head>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/head.php'; ?>
+<body>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/nav.php'; ?>
 
-<meta charset="UTF-8">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="Author" content="xxxx" />
-
-<?php include('../../public/template/head.php'); ?>
-<?php include('../../public/template/header.php'); ?>
-<?php include('../../public/template/nav.php'); ?>
 <div class="container">
 
   <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
@@ -29,10 +21,10 @@
 
 
 <!-- call my js files -->
-<script src="../assets/js/signup-onkeyup/uname-exist-ajax.js"></script>
-<script src="../assets/js/signup-onkeyup/pcode1-ajax.js"></script>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/uname-exist-ajax.js"></script>
+<script src="<?php echo ROOT_PATH; ?>public/assets/js/signup-onkeyup/pcode1-ajax.js"></script>
 
-<body>
+
 
 <!--Form-->
 <form id="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
@@ -41,7 +33,7 @@
 
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ExistUserName()" value="<?php  if(isset($_POST["Edit"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ExistUserName()" value="<?php  if(isset($_POST["Edit"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>"><br>  
   <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
@@ -51,15 +43,7 @@
   <label for="password">Confirm Password</label>
   <input id="passwordC" type="password" name="passwordC" placeholder="Confirm Password" onkeyup="ValidatePassword()"   >  <br>  <br>
   <span id="cPasswordMessage"></span>  
- <!--
-  <label for="inputName">First Name</label>
-  <input id="fName" type="text" name="fName" placeholder="John" onkeyup="ValidateFname()" required value="<?php if(isset($_POST["register"])) $fName = $_POST["fName"]; if(isset($fName)) echo $fName  ?>"><br>  
-  <span id="fNameMessage"></span>  
-  <br>  
-  <label for="inputlname">Last Name|Nom</label>
-  <input id="lName" type="text" name="lName" placeholder="Doe" required onkeyup="ValidateLname()" value="<?php if(isset($_POST["register"])) $lName = $_POST["lName"];  if(isset($lName)) echo $lName  ?>"><br> 
-  <span id="lNameMessage"></span><br>
--->
+
   
   
   <!--Submit button to send form data-->
@@ -75,8 +59,7 @@
     <!-- Other game levels go here -->
   </div>
 </div>
-<?php include('../../public/template/footer.php'); ?>
-<script src="../../public/public/template/main.js"></script>
+
 
 </body>
 
@@ -86,18 +69,20 @@
 <?php
 
 //connection with the db  variable  to have the connectoin ($connection)
-require_once '../../db/connection.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/Database.php';
 
             
-include('../../src/features/checkForm.php');     
-include("../../db/structureDb.php");
-include("../../src/features/pw-update.php");
+require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'src/features/checkForm.php';     
+require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'src/features/pw-update.php';     
+require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/create.php';
+
 
 if(isset($_POST["Login"]))
-echo "<script>window.location.href='signin-form.php'</script>"
+  echo "<script>window.location.href='signin-form.php'</script>"
 
 ?>
-
+<?php require $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'public/template/footer.php' ?>
 </head>
 
 </html>

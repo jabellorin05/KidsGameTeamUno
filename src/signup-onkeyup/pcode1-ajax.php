@@ -3,8 +3,8 @@
 <?php
 
 $warn_msg = "";
-$max_lenght = "Password must contain at least 8 characters";
-$empty_msg ="The password is empty";
+$max_lenght = "<div class='text-center'>Password must contain at least 8 characters";
+$empty_msg ="<div class='text-center'>The password is empty";
 global $validPassowrd;
 $validPassowrd=true;
 
@@ -20,7 +20,7 @@ if ($password == '') {
     $validPassowrd=false;
 }elseif($password!==$passwordC){
     $validPassowrd=false;
-    echo "Password and Confirm Password must be the same.";
+    echo "<div class='text-center'>Password and Confirm Password must be the same.";
 }
 
     

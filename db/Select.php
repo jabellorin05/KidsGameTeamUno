@@ -1,14 +1,16 @@
 <?php
-require_once '../../db/connection.php';
+require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
+require_once $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/Database.php';
 
 // Connection with the database
+/*
 function selectDb($connection) {
     try {
         mysqli_select_db($connection, "Kidsgames");
     } catch(mysqli_sql_exception $error) {
         echo $error;
     }
-}
+}*/
 
 function GetRegistrationOrder($connection) {
   
@@ -34,7 +36,7 @@ function GetRegistrationOrder($connection) {
 
 function GetUserId($connection,$username){
 
- $sql_query = "SELECT id from player where userName = '$username' ";
+ $sql_query = "SELECT registrationorder from player where userName = '$username' ";
 
 
  selectDb($connection);
@@ -45,13 +47,13 @@ function GetUserId($connection,$username){
 
  if($rows>0){
     $result=$sqlResult->fetch_assoc();
-    $id=$result["id"];
+    $id=$result["registrationorder"];
     return $id;
  }
 
  else{
 
-    echo "Username not found";
+    echo "<div class='text-center'>Username not found";
  }   
 
  return null;

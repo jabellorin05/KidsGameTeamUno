@@ -1,20 +1,14 @@
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');   ?>
 <!DOCTYPE html>
 
 <html lang="en">
+  <!-- JOSE USA ESTA PAGINA COMO EJEMPLO -->
 
-<head>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/head.php'; ?>
+<body>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/header.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/nav.php'; ?>
 
-<meta charset="UTF-8">
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="Author" content="xxxx" />
-
-<?php include('../../public/template/head.php'); ?>
-<?php include('../../public/template/header.php'); ?>
-<?php include('../../public/template/nav.php'); ?>
 <div class="container">
 
   <div class="row justify-content-center align-items-center"> <!-- Modificado para centrar horizontal y verticalmente -->
@@ -24,9 +18,9 @@
           <h5 class="card-title">Signin</h5>
 
 
-<!-- call my js files -->
 
-<script src="../assets/js/checkForm-ajax.js"></script>
+
+          <script src="<?php echo ROOT_PATH; ?>public/assets/js/main.js"></script>
 <body>
 
 <!--Form-->
@@ -36,7 +30,7 @@
 
  
   <label for="inputName">UserName</label>
-  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup=""  value="<?php  if(isset($_POST["login"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>  "><br>  
+  <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup=""  value="<?php  if(isset($_POST["login"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>"><br>  
   <span id="uNameMessage"></span><span id="uNameMessage2"></span>  <br>    
 
  
@@ -54,29 +48,32 @@
 
 
 </form>
+<div class="text-center">
+    <p>If you don't have a user created, please click on the <strong>Register</strong> button.</p>
+</div>
 </div>
       </div>
     </div>
     <!-- Other game levels go here -->
   </div>
 </div>
-<?php include('../../public/template/footer.php'); ?>
-<script src="../../public/public/template/main.js"></script>
-
-</body>
-
-
-
 
 <?php
-require_once '../../db/connection.php';
-//include("../../db/structureDb.php");
-//require_once '../../db/Select.php';
-include("../../src/features/signin.php");
+/* JOSE PORFA PON LAS RUTAS OCUPANDO LAS VARIABLES  */
+require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH .  'db/Database.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . "src/features/signin.php";
 //checkUserExist(ConnectDb());
-
-
-if(isset($_POST["register"]))
-echo "<script>window.location.href='signup-form.php'</script>"
+if(isset($_POST["register"])) {
+  echo "<script>window.location.href='" . ROOT_PATH . "public/form/signup-form.php'</script>";
+}
 
 ?> 
+
+</body>
+<?php require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'public/template/footer.php'; ?>
+</html>
+
+
+
+

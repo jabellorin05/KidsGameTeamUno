@@ -1,24 +1,29 @@
+<?php require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');   ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<?php include('public/template/head.php'); ?>
-<?php include('public/template/header.php'); ?>
-<?php include('public/template/nav.php'); ?>
-<div class="container">
-  <h3 class="text-center">Score: <span id="score">0</span></h3>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Level 1: Order 6 letters in ascending order</h5>
-          <p class="card-text">Click to start</p>
-          <button class="btn btn-primary btn-block" onclick="startGame(1)">Start</button>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/head.php'; ?>
+
+  <body>
+  <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/header.php'; ?>
+  <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/nav.php'; ?>
+  <div class="container" >
+    <h3 class="text-center">Score: <span id="score">0</span></h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body" >
+            <h5 class="card-title">Level 1: Order 6 letters in ascending order</h5>
+            <p class="card-text">Click to start</p>
+            <a class="nav-link" href="<?php echo ROOT_PATH; ?>public/form/game-form.php" style="font-size: 18px;">|
+              <button class="btn btn-primary btn-block">Start</button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Other game levels go here -->
-  </div>
-</div>
-<?php include('public/template/footer.php'); ?>
-<script src="public/assets/js/main.js"></script>
-
-</body>
+  </div> 
+  <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/footer.php'; ?>
+  <?php require_once ($_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . 'db/create.php');?>
+  </body>
 </html>

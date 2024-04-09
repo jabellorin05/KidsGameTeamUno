@@ -1,4 +1,5 @@
  
+ 
 <?php 
         if (session_status() == PHP_SESSION_ACTIVE) {
             echo "Session is already started.";
@@ -10,20 +11,20 @@
 <html lang="en">
 <head>
     <?php 
-    //echo $_SERVER['DOCUMENT_ROOT'] . '/dw3/finalproject/config.php';
-    require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
-    //echo ROOT_PATH . 'public/template/head.php';
-    //require_once ROOT_PATH . 'public/template/head.php' 
-    require $_SERVER['DOCUMENT_ROOT'] .  ROOT_PATH . '/public/template/head.php'
+        //echo $_SERVER['DOCUMENT_ROOT'] . '/dw3/finalproject/config.php';
+        require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
+        //echo ROOT_PATH . 'public/template/head.php';
+        //require_once ROOT_PATH . 'public/template/head.php' 
+        require $_SERVER['DOCUMENT_ROOT'] .  ROOT_PATH . '/public/template/head.php'
     ?>
     
 </head>
 <body class="introduction">            
     <div id="messagesdiv">
         <br/>
-        G A M E &emsp; O V E R!
-        <br/>
-        YOU DO NOT HAVE MORE LIFES TO CONTINUE PLAYING!
+        Y O U &emsp; S T O P P E D &emsp; THE &emsp; G A M E
+
+        WE WILL WAIT FOR YOU!
     </div>
     
     <div id="optionsdiv">
@@ -61,7 +62,6 @@
             // Close the popup
             window.close();
         });
-
     
     </script>   
 </body>

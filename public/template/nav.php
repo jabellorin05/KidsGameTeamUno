@@ -1,6 +1,20 @@
+<?php
 
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="padding: 0; background-image: url('image/confetti.jpg'); background-size: cover;">
-  <div class="container" style="height: 0.5px;">
+if (session_status() != PHP_SESSION_ACTIVE) {
+  session_start();
+}
+
+$login = 0; // Inicialmente el usuario no está logueado
+
+if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+  // La variable de sesión existe y no está vacía, entonces el usuario está logueado
+  $login = 1;
+}
+echo "<script>console.log('User logged:" . $login. "')</script>";
+?> 
+
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="padding: 0; background-image: url('<?php echo ROOT_PATH; ?>public/assets/media/image/confetti.jpg'); background-size: cover;">
+<div class="container" style="height: 0.5px;">
     <a class="navbar-brand" href="#" style="font-size: 34px;">Kids Games</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,14 +22,40 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#" style="font-size: 18px;">Home</a>
+          <a class="nav-link" href="<?php echo ROOT_PATH; ?>" style="font-size: 18px;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="font-size: 18px;">About Us</a>
+          <a class="nav-link" href="" style="font-size: 18px;">About Us</a>
         </li>
-        <li class="nav-item" id="gameMenuItem" style="display: none;">
-          <a class="nav-link" href="game.php" style="font-size: 18px;">Game</a>
-        </li>
+        <?php 
+        if ($login == 1){
+      
+          echo '<li class="nav-item" id="gameMenuItem">
+          <a class="nav-link" href="' . ROOT_PATH . 'public/form/game-form.php" style="font-size: 18px;">Game</a>
+          </li>';
+          echo '<li class="nav-item" id="resultsMenuItem">
+          <a class="nav-link" href="' . ROOT_PATH . 'public/message/history-table.php" style="font-size: 18px;">Results</a>
+          </li>';
+          echo '<li class="nav-item" id="resultsMenuItem">
+          <a class="nav-link" href="' . ROOT_PATH . 'src/features/signout.php" style="font-size: 18px;">Log out</a>
+          </li>';
+          echo '<li class="nav-item" id="resultsMenuItem">
+          <a class="nav-link" href="#">User: '.  $_SESSION['username'] . '</a>
+          </li>';
+        }
+        else 
+        {
+          echo '<li class="nav-item" id="resultsMenuItem">
+          <a class="nav-link" href="' . ROOT_PATH . 'public/form/signin-form.php" style="font-size: 18px;">Log in</a>
+          </li>';
+
+        }
+        ?>
+
+
+
+
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
             Login
@@ -33,42 +73,12 @@
               <button type="submit" class="btn btn-primary">Sign in</button>
             </form>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" name="register" href="#">New around here? Sign up</a>
-            <a class="dropdown-item" href="public/form/signup-form">Forgot password?</a>
+            <a class="dropdown-item" href="#">New around here? Sign up</a>
+            <a class="dropdown-item" href="#">Forgot password?</a>
           </div>
         </li>
+      -->
       </ul>
     </div>
   </div>
 </nav>
-
-
-<?php
-
-
-?> 
-
-
-<script>
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    var username = document.getElementById("loginUsername").value;
-    var password = document.getElementById("loginPassword").value;
-    if (username.trim() === "") {
-      alert("Please enter a username.");
-    } else if (password.trim() === "") {
-      alert("Please enter a password.");
-    } else {
-      // Validación de usuario y contraseña
-      if (username === "JohnDoe" && password === "123") {
-        // Acceso concedido
-        document.getElementById("gameMenuItem").style.display = "block";
-        alert("Login successful!");
-      } else {
-        // Acceso denegado
-        alert("Invalid username or password.");
-      }
-    }
-  });
-</script>
-

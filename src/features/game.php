@@ -1,30 +1,12 @@
  
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/dw3/finalproject/config.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php';
 
-require $_SERVER['DOCUMENT_ROOT'] . '/dw3/finalproject/src/functions/game-functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/src/functions/game-functions.php';
 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    /*
-    if(isset($_POST['Validate'])) {
-        
-        if (session_status() != PHP_SESSION_ACTIVE) {
-            session_start();
-            //echo "STARTED WITH POST.";
-        }
-
-
-       
-        
-
-        //echo "<script>document.getElementById('FP2').innerText = '" . $_POST["FP2"] ."' </script>";
-        //$gameDesc = setGame(4);
-        //echo "<script>document.getElementById('lblGame').innerText = '$gameDesc';</script>";
-    }
-*/
 
     if (isset($_POST['game'])) {
         // Check which PHP function to call based on the value of the function parameter
@@ -34,10 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             validateGame($_POST['param1'], $_POST['param2'], $_POST['param3'], $_POST['param4'], $_POST['param5'], $_POST['param6']);
         }
     }
+    elseif (isset($_POST['stop'])) {
+        if ($_POST['stop'] == 'stopGame') {
+            //call the method for cancel game
+            stopGame();
+        }
+    }
 }
 else 
 {
-
     if (session_status() != PHP_SESSION_ACTIVE) {
         session_start();
     } 
@@ -49,42 +36,33 @@ else
         // The session variable either doesn't exist or is empty
         //redirect to home
         $host = $_SERVER['HTTP_HOST'];
-
-        // Get the current script path
-        $script_name = $_SERVER['SCRIPT_NAME'];
-        
-        // Remove the unwanted parts from the script path
-        $new_script_name = str_replace("/public/form/", "/", $script_name);
-        
+        echo $host;
         // Redirect to the new URL
         header("Location: http://$host". ROOT_PATH);
         //header("Location: http://localhost/dw3/finalproject/index.php");
         exit();
     }
    
+    //CHANGE STYLES FOR LIVES
+    $lives = "";
+    for ($i =1; $i <= 6; $i ++)
+    {
+        $lives = $lives . "liv$i = document.getElementById('live$i');";
+        if ($i == $_SESSION['lives']) // CURRENT LIFE
+            $lives = $lives . "liv$i.classList.add('licurrent');";
+        elseif ($i < $_SESSION['lives']  )
+            $lives = $lives . "liv$i.classList.add('linext');";
+        elseif ($i > $_SESSION['lives'])
+            $lives = $lives . "liv$i.classList.add('lidead');";
 
 
+    }
+
+    $divGames = "";
 
     if ($_SESSION['game'] > 4)
     {
-
-        $lives = "";
-        for ($i =1; $i <= 6; $i ++)
-        {
-            $lives = $lives . "liv$i = document.getElementById('live$i');";
-            if ($_SESSION['lives'] == $i)
-                $lives = $lives . "liv$i.classList.add('licurrent');";
-            elseif ($_SESSION['lives']== 6 || $_SESSION['lives'] < $i)
-                $lives = $lives . "liv$i.classList.add('linext');";
-            elseif ($_SESSION['lives'] < $i)
-                $lives = $lives . "liv$i.classList.add('linext');";
-
-
-        }
-
-        echo "
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        $divGames = "
             div3 = document.getElementById('three');
             div3.style.display = 'none';
             div4 = document.getElementById('four');
@@ -93,12 +71,19 @@ else
             div5.style.display = 'none';
             div6 = document.getElementById('six');
             div6.style.display = 'none';
-            
-
-
-        });
-        </script> ";
+       ";
     }
+
+    echo "
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    ". $divGames . " " . $lives . "   
+
+     
+    });
+    </script> ";
+
+
 }
 
 

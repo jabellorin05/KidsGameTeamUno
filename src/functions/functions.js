@@ -4,6 +4,7 @@
 
 //validate capital Letter
 function FirstCapitalLetter(){
+ alert("Este codigo debe ir en main o en las validaciones ajax, aqui no!");
 
 
     var fName = document.getElementById("fName").value;
