@@ -25,6 +25,7 @@ $conn=ConnectDb();
 
 $queryResult=getResult($conn);
 $resultados = [];
+if(isset($queryResult))
 foreach($queryResult as $value) {
    
    
