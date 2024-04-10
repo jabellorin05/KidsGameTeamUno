@@ -23,7 +23,7 @@
 
               
                 <label for="inputName">UserName</label>
-                <input id="uName" type="text" name="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>"><br>  
+                <input id="uName" type="text" name="uName" id="uName" placeholder="JohnDoe" onkeyup="ValidateUserName()"  value="<?php  if(isset($_POST["register"])) $uName=$_POST["uName"];  if(isset($uName)) echo $uName ?>"><br>  
                 <span id="uNameMessage"><br></span><span id="uNameMessage2"></span>  <br>    
 
               

@@ -13,7 +13,7 @@
 }
 
 /* Importing the Google Fonts stylesheet for the 'Poppins' font family */
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
 * {
@@ -23,7 +23,6 @@
   font-family: Arial, Helvetica, sans-serif;
   outline: none; border:none;
   text-decoration: none;
-  text-transform: capitalize;
   transition: .2s linear;
 
 }
@@ -869,7 +868,7 @@ button#btn-ShowRegister:hover {
 .user-name, #uName {
   font-weight: 600;
   font-style: italic;
-  color: var(--color-acent);
+  color: black;
   padding-left: 1rem;
   font-size: 20px;
 }
