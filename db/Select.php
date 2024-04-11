@@ -34,6 +34,27 @@ function GetRegistrationOrder($connection) {
 }
 
 
+function GetLastRegistrationOrder($connection) {
+  
+   
+    
+    selectDb($connection);
+    
+    $sql_query = "SELECT registrationOrder FROM player ORDER BY registrationOrder DESC LIMIT 1";
+    $queryRessult = $connection->query($sql_query);
+    $rows = $queryRessult->num_rows;
+    
+    if ($rows > 0) {
+        $result = $queryRessult->fetch_assoc();
+        return $result["registrationOrder"];
+    } else {
+      
+        return null; // Devolver null si el usuario no existe
+    }
+
+}
+
+
 function GetUserId($connection,$username){
 
  $sql_query = "SELECT registrationorder from player where userName = '$username' ";

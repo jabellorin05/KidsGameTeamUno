@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS player(
 
 CREATE TABLE IF NOT EXISTS authenticator(   
     passCode VARCHAR(255) NOT NULL,
-    registrationOrder INTEGER AUTO_INCREMENT, 
+    registrationOrder INTEGER, 
     FOREIGN KEY (registrationOrder) REFERENCES player(registrationOrder)
 )CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci; 
 

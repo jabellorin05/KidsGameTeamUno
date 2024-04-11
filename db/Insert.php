@@ -4,7 +4,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');
 require_once $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/Database.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . "src/features/newUserClass.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] .ROOT_PATH . 'db/Select.php';
 
 
 
@@ -39,10 +39,13 @@ function insertNewPlayer(NewUser $newUserN) {
 
 function insertPassword(NewUser $newUser){
     $connectionDBB=ConnectDb();
+    
+    $lastRNumber=GetLastRegistrationOrder($connectionDBB);
+   
     selectDb($connectionDBB);
     //encrypt the password with the function hash method.
     $encryptedPassword=password_hash($newUser->password,PASSWORD_DEFAULT);
-    $sql="INSERT INTO authenticator (passCode) values ('$encryptedPassword')";
+    $sql="INSERT INTO authenticator (passCode,registrationOrder) values ('$encryptedPassword',$lastRNumber)";
 
 
     $sql_Insert=$connectionDBB->query($sql);

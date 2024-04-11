@@ -22,7 +22,7 @@ if($queryResult->num_rows<=0){
 
 }else{
     $results = array(); // Array para almacenar los resultados
-
+    
     while ($data = $queryResult->fetch_assoc()) {
         // Almacena cada fila de datos en el array $results
         $result = array(
