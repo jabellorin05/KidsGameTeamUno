@@ -44,7 +44,7 @@ if (isset($validEUsername))
     
         // Redirige al usuario a otra página después de cierto tiempo
 
-  //  echo"<script>alert('$message'); window.location.href = ' ". ROOT_PATH  ."public/form/signin-form.php';</script>";
+    echo"<script>alert('$message'); window.location.href = ' ". ROOT_PATH  ."public/form/signin-form.php';</script>";
 
     
     } 
