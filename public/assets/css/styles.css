@@ -747,7 +747,7 @@ button {
 .containerresults {
   max-width: 800px;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #4caf50;
   align-items: center;
 }
 
