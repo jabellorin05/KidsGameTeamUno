@@ -80,8 +80,8 @@ foreach($queryResult as $value) {
             </div>
         </div>
 
-        <button  id="btnHome"> Go Home </button>
-        <button  id="btnTryAgain"> Try Again!</button>
+        <button  id="btnHome" style="background-color: #ffa500;"> Go Home </button>
+        <button  id="btnTryAgain" style="background-color: #ffa500;"> Try Again!</button>
         <script>
             document.getElementById('btnHome').addEventListener('click', function() {
             console.log("Redirigiendo a la página de inicio");
