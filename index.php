@@ -8,8 +8,7 @@
   <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/header.php'; ?>
   <?php require $_SERVER['DOCUMENT_ROOT'] . ROOT_PATH . '/public/template/nav.php'; ?>
   <div class="container" >
-    <h3 class="text-center">Score: <span id="score">0</span></h3>
-    <div class="row justify-content-center">
+     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card">
           <div class="card-body" >
