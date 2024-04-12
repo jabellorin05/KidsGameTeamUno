@@ -564,23 +564,25 @@ button[id^="btnqtn"] {
   background-color:#4caf50; /*#ffa500, #4caf50*/
   color: var(--color-light);
   font-size: 20px;
-  text-align: center;
-  
+  text-align: center;  
   padding: 0 10px;
   height: 100px;
+  width: 80%;
   align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #optionsdiv {
-  padding: 0 10px;
-  background-color: rgba(0, 0, 0, 0.8);
-  background-color: var(--color-black);
+padding: 0 10px;
+  background-color: #4caf50; 
   height: 100px;
   width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto
+  margin: 0 auto;
   
 }
 
