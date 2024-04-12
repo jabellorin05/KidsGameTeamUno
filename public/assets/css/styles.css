@@ -576,10 +576,11 @@ button[id^="btnqtn"] {
   background-color: rgba(0, 0, 0, 0.8);
   background-color: var(--color-black);
   height: 100px;
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto
   
 }
 
