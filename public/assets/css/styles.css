@@ -723,7 +723,7 @@ button {
 }
 
 .description {
-  color: var(--color-secondary);
+  color: white;
   text-align: center;
   margin-top: 3rem;
   padding-bottom: 2rem;
