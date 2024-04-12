@@ -13,7 +13,7 @@ if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 echo "<script>console.log('User logged:" . $login. "')</script>";
 ?> 
 
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg" style="padding: 0; background-size: cover;">
+<nav class="navbar navbar-dark bg-green navbar-expand-lg" style="padding: 0; background-size: cover; background-color: #4caf50; color: white;">
 <div class="container" style="height: 0.5px;">
     <a class="navbar-brand" href="#" style="font-size: 34px;">Kids Games</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
