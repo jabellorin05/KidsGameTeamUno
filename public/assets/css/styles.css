@@ -874,7 +874,7 @@ button#btn-ShowRegister:hover {
 }
 /*Styles for nav in game */
 .navlives {
-  background-color: black; /* Set background color to black */
+  background-color: #4caf50; /* Set background color to black */
   text-align: center; /* Center the navigation */
   height: 40px; /* Set the height to 50 pixels (adjust as needed) */
 }
