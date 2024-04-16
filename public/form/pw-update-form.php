@@ -47,8 +47,8 @@
   
   
   <!--Submit button to send form data-->
-  <input id="register" class="btn btn-primary" type="submit" name="Edit" value="Edit" />
-  <input id="login" class="btn btn-primary" type="submit" name="Login" value="Login" />
+  <input id="register" type="submit" name="Edit" value="Edit" />
+  <input id="login"  type="submit" name="Login" value="Login" />
 
 
 

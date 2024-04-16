@@ -173,13 +173,13 @@ function postWithAjax(game)
                         break;
                     case "gameover":
                         alert("YOU FAILED!\n" + gameVal + "\n" +  usVal );
-                        window.open('/' + sitename + '/public/message/game-over.php', 'popupWindow', 'width=800px,height=200px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
+                        window.open('/' + sitename + '/public/message/game-over.php', 'popupWindow', 'width=800px,height=300px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
                         window.location.href = "/" + sitename + "/index.php";
                         //alert("PopUp!\n" + gameVal + "\n" +  usVal + "\nLooser" );
                         //window.location.href = "/dw3/finalproject/public/message/game-over.php";
                         break;
                     case "winner":
-                        window.open('/' + sitename + '/public/message/game-won.php', 'popupWindow', 'width=800px,height=200px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
+                        window.open('/' + sitename + '/public/message/game-won.php', 'popupWindow', 'width=800px,height=300px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
                         window.location.href = "/" + sitename + "/public/message/history-table.php";
                         break;
 
@@ -336,7 +336,7 @@ function postWithAjaxStop()
             let size = resArr.length;
             if (size == 2)
             {
-                window.open('/' + sitename + '/public/message/game-stopped.php', 'popupWindow', 'width=800px,height=200px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
+                window.open('/' + sitename + '/public/message/game-stopped.php', 'popupWindow', 'width=800px,height=300px,resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no')
                 window.location.href = "/" + sitename + "/public/message/history-table.php";
             }
         }

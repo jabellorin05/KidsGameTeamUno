@@ -16,6 +16,8 @@
         //echo ROOT_PATH . 'public/template/head.php';
         //require_once ROOT_PATH . 'public/template/head.php' 
         require $_SERVER['DOCUMENT_ROOT'] .  ROOT_PATH . '/public/template/head.php'
+        ?>
+    
     ?>
     
 </head>

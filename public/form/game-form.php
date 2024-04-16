@@ -8,10 +8,13 @@
         } else {
             // The session variable either doesn't exist or is empty
             //redirect to home
+            echo "<script>alert('It is needed to do the login');</script>";
             $host = $_SERVER['HTTP_HOST'];
             echo $host;
             // Redirect to the new URL
+            
             header("Location: http://$host". ROOT_PATH);
+           
             exit();
         }
     ?>

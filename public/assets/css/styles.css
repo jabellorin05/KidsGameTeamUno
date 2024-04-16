@@ -25,7 +25,7 @@
   text-decoration: none;
   transition: .2s linear;
   text-align: center;
-  margin: 0.8em;
+  margin: 0.2em;
 
 }
 
@@ -174,38 +174,50 @@ header {
 
 /*=====NAVBAR=====*/
 
-header .navbar {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto; 
+  margin: 0 ; 
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-  /*background-color: rgba(226, 20, 106, 0.5);*/
+  background-color: #4caf50;
 }
 .navbar .logo {
   color: var(--color-light);
   font-weight: 600;
-  font-size: 2.1rem;
+  font-size: 1.8rem;
   text-decoration: none;
 }
 .navbar .logo span {
-  color: var(--color-primary);
+  color: white;
 }
 .navbar .menu-links {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 15px;
 }
 .navbar a {
   color: var(--color-light);
   text-decoration: none;
   transition: 0.2s ease;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .navbar a:hover {
-  color: var(--color-secondary);
+  color: white;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  font-size: 1.2rem;
+}
+a:hover {
+  color:  white;
+  font-weight: bold;
+}
+
+
 
 #close-menu-btn {
   position: absolute;
@@ -221,7 +233,7 @@ header .navbar {
   }
  
   .navbar .logo {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
     
   #btn-signin{
@@ -232,7 +244,7 @@ header .navbar {
     top: 0;
     left: -250px;
     width: 250px;
-    height: 100vh;
+    height: 500px;
     background: var(--color-light);
     flex-direction: column;
     padding: 70px 40px 0;
@@ -361,16 +373,21 @@ header .navbar {
   margin-top: -1rem;
 }
 
-input[type=submit]:hover {
-  background-color: var(--color-secondary);
+input[type=submit]:hover, button:hover {
+  background-color: white;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+  font-weight: bold;
 }
 
-input[type=submit] {
-  background-color: var(--color-primary);
-  color: var(--color-light);
+input[type=submit], button {
+
+  background-color:  #4caf50;
+  color:white;
   padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
+  border: 2px solid white;
+  
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -448,11 +465,7 @@ input[type=text], select, textarea {
 
 /*===== INTRODUCTION PAGE QUESTIONNAIRE =====*/
 
-.introduction{
-  background-image: url('./img/intro-test.jpg');
-  background-position: center;
-  background-size: cover;
-}
+
 
 .intro-section{
   height: 100vh;
@@ -534,6 +547,7 @@ input[type=text], select, textarea {
   height: 100%;
   width: 100%; 
   padding: 0 20px;
+
 }
 
 button[id^="btnqtn"] {
@@ -611,6 +625,7 @@ padding: 0 10px;
   /*border: 2px solid var(--color-dark);*/
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
+  
 }
     
 .pform {
@@ -672,16 +687,16 @@ padding: 0 10px;
 }
 
 
-
+/*
 button {
   padding: 8px 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  background-color: #ffa500;
-  color: var(--color-light);
+  background-color: white;
+  color: #4caf50;
   border-radius: 4px;
-  }
+  }*/
         
 #bottombuttonsdiv{
   padding: 5px 10px;
@@ -776,23 +791,7 @@ button {
 }
 
 
-.result-section button {
-  background: var(--color-primary);
-  padding: 12px 30px;
-  border: none;
-  font-size: 1rem;
-  border-radius: 6px;
-  margin-top: 20px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.2s ease;
-  align-items: center;
-}
 
-.result-section button:hover {
-  color: var(--color-acent) !important;
-  background: var(--color-primary-variant);
-}
 
 
 
@@ -818,14 +817,16 @@ button {
 }
 
 form {
-  /*padding: 5rem;*/
-  background-color: #a6faa9;
+  /*padding: 5rem;
+  background-color: #1ead96;*/
+  background-color: #4caf50;
   color: var(--color-light);
   border-radius: 2rem;
   /*padding: 1rem;*/
   padding: 10px;
-  margin: 20px;
+  /*margin: 20px;*/
   width: 98%;
+ 
 }
 
 fieldset {
@@ -849,7 +850,19 @@ h1.login {
   margin-bottom: 10px;
   width: 100%;
   padding: 8px;
+
+  
 }
+
+#password, #passwordC {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+
+  
+}
+
 
 button#btn-form,
 button#btn-ShowRegister {
@@ -966,15 +979,6 @@ body, html {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn-primary {
-  background-color: #ffc107;
-  border-color: #ffc107;
-}
-
-.btn-primary:hover {
-  background-color: #ff9800;
-  border-color: #ff9800;
-}
 
 h1 {
   color: #343a40;
@@ -982,6 +986,7 @@ h1 {
 
 .card-title {
   color: #343a40;
+  font-weight: bold;
 }
 
 .card-text {

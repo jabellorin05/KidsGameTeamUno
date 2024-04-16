@@ -1,4 +1,18 @@
+<?php
+
+if (session_status() != PHP_SESSION_ACTIVE) {
+  session_start();
+}
+
+$login = 0; // Inicialmente el usuario no está logueado
+
+if (isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+  // La variable de sesión existe y no está vacía, entonces el usuario está logueado
+  $login = 1;
+}
+?> 
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/kidsgameteamuno/config.php');   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +26,25 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-body" >
-            <h5 class="card-title">Level 1: Order 6 letters in ascending order</h5>
-            <p class="card-text">Click to start</p>
+            <h5 class="card-title">Welcome to Kids Games. Do you want to start the adventure?</h5>
+            <?php 
+            if ($login == 1){
+                echo '<p class="card-text">Click to start</p>
+                <a class="nav-link" href="'. ROOT_PATH .'public/form/game-form.php">
+                  <button >Start</button>
+                </a>';
+            }
+            else{
+                echo '<p class="card-text">Login is needed</p>
+                <a class="nav-link" href="'. ROOT_PATH .'public/form/signin-form.php">
+                  <button >Login</button>
+                </a>';
+            }
+            ?>
+            <!-- <p class="card-text">Click to start</p>
             <a class="nav-link" href="<?php echo ROOT_PATH; ?>public/form/game-form.php" style="font-size: 18px;">|
-              <button class="btn btn-primary btn-block">Start</button>
-            </a>
+              <button >Start</button>
+            </a>-->
           </div>
         </div>
       </div>

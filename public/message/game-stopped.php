@@ -23,7 +23,7 @@
     <div id="messagesdiv">
         <br/>
         Y O U &emsp; S T O P P E D &emsp; THE &emsp; G A M E
-
+        <br/>
         WE WILL WAIT FOR YOU!
     </div>
     
