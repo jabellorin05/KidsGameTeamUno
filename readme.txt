@@ -4,6 +4,11 @@
 
 Welcome to the Real-Time Validation & Sign-In website! This project features real-time validation of user input, user account creation and sign-in functionality, as well as session management for user authentication.
 
+## ROOT PATH
+1. The root path of the project musb be: KidsGameTeamUno, examples:
+   - With XAMP: C:\xampp2\htdocs\KidsGameTeamUno
+   - With WAMP: C:\wamp64\www\KidsGameTeamUno
+
 ## Features
 
 1. Real-Time Validation:
@@ -48,7 +53,7 @@ Welcome to the Real-Time Validation & Sign-In website! This project features rea
 
 ## Tree Structure
 
-C:.
+KidsGameTeamUno
 |   .htaccess
 |   config.php
 |   index.php
