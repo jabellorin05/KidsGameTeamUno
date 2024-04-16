@@ -174,3 +174,5 @@ KidsGameTeamUno
 2. Use the provided forms to sign in with your credentials or create a new account.
 3. Access the game levels page after successful login to start playing.
 
+## GITHUB
+https://github.com/jabellorin05/KidsGameTeamUno
